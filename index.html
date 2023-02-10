@@ -23,7 +23,7 @@
             <h1 id="title">{{ col.collection.title }}</h1>
         </div>
         <div class="row">
-            <div class="card " v-for="item in col.collection.items" style="width: 33%;">
+            <div class="card col-lg-4" v-for="item in col.collection.items">
                 <div class="card-body">
                     <div v-for="item2 in item.data">
                         <h5 class="card-title">{{ item2.prompt }}</h5>
