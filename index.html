@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <title>Introducción a VueJS</title>
-        <meta name="author" content="">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>Introducción a VueJS</title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-    <body>
+</head>
 
-        <h1 id="autor">Autor: TU NOMBRE AQUÍ</h1>
+<body>
 
-        <!-- https://vuejs.org/v2/guide/index.html -->
-        <div id="app">
-            <!--
+    <h1 id="autor">Autor: Sergio Montes</h1>
+
+    <!-- https://vuejs.org/v2/guide/index.html -->
+    <div id="app">
+
+        <div class="jumbotron mt-4 p-5 ms-3 text-dark rounded" style="background-color:#E9ECEF;">
+            <h1 id="title">{{ col.collection.title }}</h1>
+        </div>
+        <div class="row">
+            <div class="card " v-for="item in col.collection.items" style="width: 33%;">
+                <div class="card-body">
+                    <div v-for="item2 in item.data">
+                        <h5 class="card-title">{{ item2.prompt }}</h5>
+                        <p class="card-text">{{ item2.value }}</p>
+                    </div>
+                    <a :href="item.href" class="btn btn-primary">Ver</a>
+                </div>
+            </div>
+        </div>
+        <!--
                  TODO: Mostrar datos del objeto collection. Ver archivo ./js/script.js
                - Cargar la librería de VueJS y el script ./js/script.js al final de la etiqueta <body>
                - Cargar el CSS de Bootstrap (no es necesario el JS)
@@ -28,8 +46,13 @@
                    - La definición <dd> será la propiedad "value"
             -->
 
-        </div>
+    </div>
 
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</body>
 
 </html>
